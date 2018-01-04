@@ -12,8 +12,6 @@ int transponowanie(double tablica[1000][1000],double tab[1000][1000]){
       tab[j][i]=tablica[i][j];
     }
   }
-  printf("po: 1:%f ", tab[0][1]);
-  printf("2:%f \n", tab[1][0]);
   return 1;
 }
 
@@ -31,6 +29,14 @@ int main(void){
     }
   }
   transponowanie(tablica,tab);
+  for( int x=0 ; x<1000; x++){
+    for(int y=0; y<1000; y++){
+      if(tablica[x][y]==tab[x][y] && x!=y)
+      printf("ups");
+    }
+  }
+  printf("po: 1:%f ", tab[0][1]);
+  printf("2:%f \n", tab[1][0]);
   clock_t end = clock();
   double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
   printf("czas CPU: %f \n", elapsed_secs);
